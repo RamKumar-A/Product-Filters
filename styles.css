@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 1rem;
+  height: 100%;
+  background-color: #ffcfcf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search__field {
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.search__field input {
+  width: 50%;
+  padding: 0.5rem;
+}
+
+.search__field button {
+  padding: 0.5rem;
+}
+
+.products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.card {
+  width: 16rem;
+  height: 20rem;
+  background-color: #ffffff;
+  display: grid;
+  justify-items: center;
+  place-content: center;
+  gap: 1rem;
+  border-radius: 0.3rem;
+}
+
+.card .imgDiv {
+  width: 14rem;
+  height: 14rem;
+}
+
+.card .imgDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .product {
+  text-align: center;
+}
+
+.card .product .product__name {
+  font-weight: 600;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.card .product .price {
+  font-size: 0.9rem;
+}
+
+.filters {
+  padding: 1rem;
+}
+
+.filters ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filters ul li {
+  width: 7rem;
+  list-style-type: none;
+  background-color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.filters ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  background-color: yellow;
+}
+
+@media (max-width: 750px) {
+  .search__field input {
+    width: 80%;
+  }
+}
