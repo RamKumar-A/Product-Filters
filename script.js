@@ -90,6 +90,8 @@ const products = {
 
 const categoryList = document.querySelector('.category');
 const productsContainer = document.querySelector('.products');
+const search = document.querySelector('.search__field-input');
+const searchBtn = document.querySelector('.search__field-btn');
 
 products.categories.forEach((category) => {
   const html = `<li id="${category.id}" class="items"><a href="#">${category.name}</a></li>`;
@@ -119,10 +121,16 @@ function renderProduct(data) {
     const html = `
   <div class="card">
           <div class="imgDiv">
-            <img src="${product?.imageUrl}" alt="${product?.productName}" />
+            <img src="${product?.imageUrl}" alt="${
+      product?.productName.charAt(0).toUpperCase() +
+      product?.productName.slice(1)
+    }" />
           </div>
           <div class="product">
-            <p class="product__name">${product?.productName}</p>
+            <p class="product__name">${
+              product?.productName.charAt(0).toUpperCase() +
+              product?.productName.slice(1)
+            }</p>
             <span class="price">$${product?.price}</span>
           </div>
         </div>
@@ -131,3 +139,17 @@ function renderProduct(data) {
     productsContainer.insertAdjacentHTML('beforeend', html);
   });
 }
+
+searchBtn.addEventListener('click', function () {
+  const filteredProduct = products.productData.filter((data) => {
+    return data.productName
+      .toLowerCase()
+      .replaceAll(' ', '')
+      .replaceAll('-', '')
+      .includes(search.value.toLowerCase());
+  });
+
+  productsContainer.innerHTML = '';
+  renderProduct(filteredProduct);
+  search.value = '';
+});
