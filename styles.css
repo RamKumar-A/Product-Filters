@@ -25,19 +25,26 @@
 .search__field input {
   width: 50%;
   padding: 0.5rem;
+  outline: none;
+  border-radius: 0.2rem;
+  border: 1px solid #ff9f9f;
 }
 
 .search__field button {
   padding: 0.5rem;
+  background-color: #ff7272;
+  color: #fff;
+  border-radius: 0.2rem;
+  border: 1px solid #ff5555;
 }
 
 .products {
-  width: 100%;
+  width: 90vw;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 1rem;
 }
 
@@ -50,6 +57,7 @@
   place-content: center;
   gap: 1rem;
   border-radius: 0.3rem;
+  box-shadow: 0.5px 0.5px 20px #ffb7b7;
 }
 
 .card .imgDiv {
@@ -91,7 +99,7 @@
 .filters ul li {
   width: 7rem;
   list-style-type: none;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffacac;
   padding: 0.5rem;
   text-align: center;
   cursor: pointer;
@@ -99,11 +107,13 @@
 
 .filters ul li a {
   text-decoration: none;
-  color: black;
+  color: #1b1b1b;
+  font-size: 1.07rem;
+  font-weight: 500;
 }
 
 .active {
-  background-color: yellow;
+  background-color: #ff0;
 }
 
 @media (max-width: 750px) {
